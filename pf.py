@@ -50,6 +50,15 @@ class Particle(object):
         """ Ajusta o peso da particula usando o fator de normalizacao (Z) """
         self.w /= Z
 
+    def __getitem__(self, i):
+        if i == 0:
+            return self.x
+        elif i==1:
+            return self.y
+        elif i==2:
+            return self.theta
+
+        
     @staticmethod
     def weighted_values(values, probabilities, size):
         """ Return a random sample of size elements from the set values with the specified probabilities
